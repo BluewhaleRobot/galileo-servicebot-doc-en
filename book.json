@@ -1,0 +1,55 @@
+{
+  "title": "Galileo navigation system(Service robot version) user manual",
+  "description": "The Galileo visual navigation system is a robot positioning and motion control system which integrates multiple sensors and is led by visual navigation. It is suitable for indoor and open outdoor environments. Galileo system has different methods of use according to different application scenarios. This manual describes how to use the Galileo navigation system in the delivery robot.",
+  "language": "en",
+  "gitbook": "3.x.x",
+  "plugins": [
+    "github",
+    "editlink",
+    "prism",
+    "downloadpdf",
+    "yahei",
+    "katex",
+    "search",
+    "anchor-navigation-ex",
+    "-live-reload"
+  ],
+  "pluginsConfig": {
+    "github": {
+      "url": "https://github.com/BlueWhaleRobot/galileo-servicebot-doc-en"
+    },
+    "editlink": {
+      "base": "https://github.com/BlueWhaleRobot/galileo-servicebot-doc-en/edit/master",
+      "label": "Edit this page"
+    },
+    "sharing": {
+      "weibo": true,
+      "twitter": true,
+      "facebook": true
+    },
+    "downloadpdf": {
+      "base": "https://doc.bwbot.org/pdf/galileo-servicebot-doc",
+      "label": "Download pdf",
+      "multilingual": false
+    },
+    "fontSettings": {
+      "theme": "white",
+      "family": "msyh",
+      "size": 2
+    },
+    "anchor-navigation-ex": {
+      "showLevel": false
+    }
+  },
+  "pdf": {
+    "pageNumbers": true,
+    "fontSize": 14,
+    "paperSize": "a4",
+    "margin": {
+      "right": 30,
+      "left": 30,
+      "top": 30,
+      "bottom": 50
+    }
+  }
+}
