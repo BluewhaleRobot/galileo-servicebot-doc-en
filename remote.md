@@ -54,6 +54,6 @@ Close the software directly. If you need to turn off the power of the device, pl
 
 Demonstration video of this chapter:
 
-[Operation of Remote control video transmission](http://139.199.64.153/media/docs/nav/videos/remote.mp4)
+[Operation of Remote control video transmission](https://www.bwbot.org/s/sYYkyd)
 
 `Please manually press the red switch on the trolley plate to stop the car in case of emergency.`

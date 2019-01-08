@@ -41,7 +41,7 @@ After the map is loaded, you can see the approximate effect of the map which you
 
 The demo video of this section:
 
-[The process of Visual map creation.](http://139.199.64.153/media/docs/nav/videos/nav-map.mp4)
+[The process of Visual map creation.](https://www.bwbot.org/s/H3B6xC)
 
 `In case of emergency, please press the red switch manually on the trolley to stop it.`
 
@@ -105,7 +105,7 @@ Click the button "Save Path" on the interface, enter the file name, and click "S
 
 The full demo video about this sector:
 
-[Draw the planning path and target point](http://139.199.64.153/media/docs/nav/videos/nav-draw.mp4)
+[Draw the planning path and target point](https://www.bwbot.org/s/pY3uAg)
 
 ## <a href="#" id="open-close"></a>3.4 Openning and closing of autonomous inspection
 
@@ -133,7 +133,7 @@ If the robot suddenly stops moving during the autonomous inspection process, and
 
 The full demo video of this section:
 
-[Openning and closing of autonomous inspection](http://139.199.64.153/media/docs/nav/videos/nav-service.mp4)
+[Openning and closing of autonomous inspection](https://www.bwbot.org/s/fBYkCv)
 
 `In case of emergency, please press the red switch manually on the trolley to stop it.`
 
@@ -161,4 +161,4 @@ The robot may not be able to trace after turning on the updating function. At th
 
 Select the name of map in the first drop-down menu. Click the button “delete “  on the right to delete the map.
 
-[Robot map management](http://139.199.64.153/media/docs/nav/videos/nav-map-manager.mp4)
+[Robot map management](https://www.bwbot.org/s/TPuSCo)
