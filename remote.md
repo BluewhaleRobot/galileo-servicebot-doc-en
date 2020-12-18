@@ -1,59 +1,43 @@
-# <a href="#" id="start"></a>Chapter 2, Remote Control Image Transmission
+# Chapter2 Ues Remote Control with Image
 
-## <a href="#" id="config"></a>2.1 Configuration of robotic vehicle computer network
+## 2.1 Connect to the network
 
-Place the battery flat on the empty area in front of the host (the battery is blocked by the camera bracket), connect the chassis power wire according to the prompt of line mark, install the wifi antenna of host computer, insert the u turn string module into the computer usb port, and plug in the camera and kinect. Press the chassis red switch and the host computer switch simultaneously, use the hdmi we give to vga plug,  connect the monitor, keyboard and mouse to the robot host and then boot, enter the user password and access to the host ubuntu system. System password is xiaoqiang.
-
-![remote-1](/images/remote-1.png)
-
-Click on the location shown below to select the wireless network which you want to access to.
-
-![remote-2](/images/remote-2.png)
-
-When there are many wifi hotspots around the use environment, 5G networks is recommended. This is because 5G network has less electromagnetic interference, more stable transmission and more effective coverage. If the network coverage of a route is too small, multiple 5G routing wireless bridges can be connected into the same wireless network. The robot access to the large-scale network can expand the ranger of remote control image transmission.
-
-## <a href="#" id="network"></a>2.2 Control terminal PC accesses the working network
-
-The control terminal PC needs to be on the same wireless network as the trolley host. Please refer to Chapter 1 for the installation of control software.
+The computer with installed software needs to be in the same wireless network as the robot. Please refer to Chapter 1 to install the software.
+As for the robot with router, you can connect your pc to the router of robot.
 
 ![remote-3](/images/remote-3.jpg)
 
-## <a href="#" id="control"></a>2.3 Operation of control terminal software 
-
-After opening control software, the initial interface is shown in the figure below. Put mouse pointer in any area, the corresponding function prompt will appear. Please try to understand the entire interface as you want.
+## 2.2 Introduction of UI
 
 ![remote-4](/images/remote-4.png)
 
-### <a href="#" id="open"></a>2.3.a The opening of remote control image transmission
+### 2.2.1 Start to use
 
-First of all, make sure that the onboard computer and the chassis are powered on. The power button is on the left side of the host. Led lights in the front of the kinect will blink after the host computer is turned on. The chassis switch is next to the digital tube. The digital tube will display the battery voltage after the chassis is powered on. Please charge the battery When its voltage is lower than 9.8V.
-
-`Click` the button `"Not Connected"` on the main interface to establish the communication link between the remote control and the chassis. It will pop up the following warning on the firewall when in the first operation. Please select "Allow access".
+`CLIIK` the `“Not Connected”` button to connect robot. Firewall warning will pop up in the first run, please select "Allow access".
+If this window does not pop up, or the client cannot connect to the robot WIFI, you need to manually add the "ChiTuClient.exe" to the firewall rules.
 
 ![remote-5](/images/remote-5.png)
 
-After the connection is successful, the main interface becomes as shown in the figure below. Now you can start the remote control chassis movement.
+After connecting successfully, UI changes as below. Now we can control robot.
 
 ![remote-6](/images/remote-6.png)
 
-Chassis motion control `supports keyboard` manipulation. The operation style is similar to the game Need for Speed.
+Chassis motion control `support keyboard` manipulation, WSAD controls front and back, left and right, and up and down arrows control the speed gear.
 
-`Right-click` in the picture transferring area to open the menu, as is shown in the figure below.
+Right click the screen1 
 
 ![remote-7](/images/remote-7.png)
 
-Select `"Original Image"` , now you can see the first view of the robot and picture transferring has already been opened.
+And then choose `“Raw image”`, now we can see the image from the front camera, the transmisson of image already start. 
 
 ![remote-8](/images/remote-8.png)
 
-Select `"Close"` in the right-click menu to end the picture transferring.
+Click `“close”` in the right-click-menu can end the transmission
 
-### <a href="#" id="close"></a>2.2.b The closing of remote control video transmission
+### 2.2.2 How to close the software
 
-Close the software directly. If you need to turn off the power of the device, please click the button “Shutdown” on the main interface to turn off the vehicle host firstly, then turn off the switch next to the digital tube of trolley chassis. Ensure that the host computer is turned off (kienct stops blinking) , unplug the wire between battery and trolley chassis.
+Just click `X` in the upper right corner. If you want to turn off the robot, you must first click the "Shutdown" button on the main interface to turn off the robot host, and then turn off the robot power switch.
 
-Demonstration video of this chapter:
+Demo Video：
 
-[Operation of Remote control video transmission](https://www.bwbot.org/s/sYYkyd)
-
-`Please manually press the red switch on the trolley plate to stop the car in case of emergency.`
+[Operation](https://www.bwbot.org/s/HxW3Mp)
