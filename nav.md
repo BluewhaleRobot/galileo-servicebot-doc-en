@@ -1,115 +1,126 @@
-# <a href="#" id="start"></a>Chapter 3, Navigation
+# Chapter3 Vision Navigation
 
-## <a href="#" id="intro"></a>3.1 System introduction
+## 3.1 System introduction
 
-The vehicle host computer is equipped with a visual navigation system. The robot trolley can move and inspect autonomously with the system, When encountering obstacles, the trolley will also autonomously dodges and bypass.
+The working progress of navigation:
 
-Navigation system workflow::
+1. After opening the Remote Control with Video, you can bulid a visual map robot can understand by controlling the robot to walk two circles around the sports area.
 
-(1) In the mode of remote control image transmission, the operator controls the device remotely to surround the motion area for twice to establish a visual map that the robot can understand.
+2. Using our control software to draw manually robot navigation routes and set target points onn the map we build in the step one.
 
-(2) Draw the inspection trajectory of robot and set the target point manually on the visual navigation map created in step 1 using the control software.
+3. Start the service of navigation and choose your target point. The robot will move manually to the target point by the routes set in the step two.
 
-(3)Start the inspection after the path and target point are set. Selecting the target point, then the robot will move utonomously to the target point along the trajectory planned in step 2.
+## 3.2 Buliding map
 
-## <a href="#" id="create"></a>3.2 The creation of map
-
-Opening the remote control image transmission according to the operation in Chapter 2, set the speed of chassis movement as about 20%. Click the button“ Start Drawing” on the main interface and wait 10 seconds.
+After opening the Remote Control with Video, you need to click “Start mapping” button and wait a moment.
 
 ![nav-1](/images/nav-1.png)
 
-Open the visual system output image.
+ Right click on the screen2 and choose Feature image in the right-click-menu
 
 ![nav-2](/images/nav-2.png)
 ![nav-3](/images/nav-3.png)
 
-Telerobot moves straight forward until the vision system initializes successfully.
+Control the robot to go forward until visual system starts successfully
 
 ![nav-4](/images/nav-4.png)
 
-Now starting of the vision system has been finished, the telerobot begins to moving in the movement area. Try to avoid pure rotation in the process of remote control (just pressing the key turn left or right wil cause the lost of vision system for targets easily). Please press the key forward and turn left or right simultaneously so as to turn the robot along the large radius trajectory.
+Now control your robot move around the sports area.Please do not turn left/right without pressing front key or back key, it will cause the visual system lost target.
 
-During remote control, please make sure that the visual indication status in the main interface is `"Tracking"`. Once it becomes red `"lost"`, please retreat the telerobot to the normal state of previous period. You must use the back button to finish the retreating process, at the same time, keep the orientation and perspective of the robot unchanged.
+Please ensure Visual Status is `“TRACKING”`. Once it becomes `“LOST”` with red color, you must control the robot to go backward just by pressing back key until the status turns to `“TRACKING”`.
 
-Please do not operate the robot temporarily if `"Closed loop optimization"` appears in the Visual indication status during remote control. When the path that the robot walks forms a circle, the robot will automatically optimize the map established previously, which will greatly improve the quality of the map. Therefore, in order to establish a more accurate map, you can remotely control the robot to walk multiplely along closed paths in the process of establishing a map. Importantly, the quality of the map will greatly influence the effect of navigation later.
+Please do not control the robot when the status turns to`“闭环优化中”`. The section of the robot that the robot has just traveled is a closed loop and can recognize the path. Optimize with the previous path. This closed-loop optimization operation will improve the quality of the map, so it is recommended that the manual remote control robot take more closed paths and optimize the closed-loop of these paths during the construction process. Through such continuous optimization of the map, efficient environment recognition can be achieved when performing tasks or disinfecting.
 
-When the robot has browsed the entire motion area, stop moving, click the button "Save Map" on the main interface, and wait for the save dialog to pop up. Enter the name of map in the dialog and click  "OK ". Wait for the map to finish loading.
+Buliding map example:
+
+![Buliding map example](images/map-example.png)
+
+The two sides of this figure are tables, and the middle is an obstacle. The remote control robot first walks clockwise and counterclockwise once according to the maximum outer contour trajectory to achieve "closed-loop optimization" so that we can get a better map.
+
+The quality of map will effect navigation greatly. 
+
+Stop moving after going around the sports area, clicks the "Save Map" button on the main interface, and waits for the save dialog box to pop up. Enter "Map Name" in the dialog, and then click OK. Wait for the map to load.
 
 ![nav_5](/images/nav-5.png)
 
-After the map is loaded, you can see the approximate effect of the map which you just established. If you feel more satisfied, you can click the button " Finish Map ". Then the section about establishment of map is finished.
+After loading-map complete, you can see the map on the screen. If you feel well you can click stop mapping and achieve the map-building.
 
-The demo video of this section:
+Full demo video：
 
-[The process of Visual map creation.](https://www.bwbot.org/s/H3B6xC)
+[How to bulid a map](https://www.bwbot.org/s/Ao2frj)
 
-`In case of emergency, please press the red switch manually on the trolley to stop it.`
+## 3.3 Draw mavigation path & Set target point
 
-## <a href="#" id="draw"></a>3.3 The drawing of inspection trajectory and site
+`Warning：Please be patient and waiting for the update of UI, because it will take a long time to exchange data between the robot and software while we run the operation of section3.3.`
 
-`Warning: Because planning trajectory need to download and render the visual map,  the client exchange large amounts of data with the trolley host, the whole process takes a long time. So for the execution of the following steps, please waiting for the update of the client software interface patiently.`
-
-Open the control software, click the button "Unconnected" to connect with the chassis, click on the button" draw navigation map" to open the editing interface of inspection path on the main interface.
+After connecting to the robot successfully, click the "Draw Navigation Map" button on the upper menu bar of the main interface to open the navigation path editing interface.
 
 ![nav-6](/images/nav-6.png)
 
-After loading, the software interface is similar to the figure below.
+UI just like the image below. 
 
 ![nav-8](/images/nav-8.png)
 
-### <a href="#" id="draw-path"></a>3.3.a Drawing the inspection trajectory
+### 3.3.a Draw navigation path
 
-The inspection trajectory is the path you want the robot to walk on. After clicking the button "Start Navigation" on the main interface, the robot will move according to the path you have drawn. Here, we will introduce how to use the path drawing tool.
+The navigation path is the path you want the robot to walk. Click "start navigation" on the main interface, the robot will move according to the path you draw. Here's how to use the path drawing tool.
 
-  - ![nav-9](/images/nav-9.png) 1. Basic operation
+- ![nav-9](/images/nav-9.png) 1. Basic operation
 
-    Basic operations contain pan and zoom. Panning of the map is achieved by draging the map with the left mouse button. Zoom of the map is achieved by scrolling he mouse forward and backward. This is very useful for drawing paths. For more detailed requirements about movement, you can enlarge it before drawing.
-  - ![nav-10](/images/nav-10.png) 2. Pencil tool
+  Basic operations include pan and zoom. Drag the map with the left mouse button to pan the map. Scrolling the mouse wheel forward and backward can zoom the map, which is very useful in drawing the path. For the places where the movement requirements are more detailed, you can zoom in and draw.
+- ![nav-10](/images/nav-10.png) 2. Pencil tool
 
-    Click the pencil icon in the left toolbar. This is a straight line tool. Click on any point with left mouse botton on the graph, then move the mouse, there will appear a red straight line. Move the mouse to the end position you want and click the left mouse button, a straight line is drawn. If you click the left button once again, then click right mouse button to cancel this drawing.
-  - ![nav-11](/images/nav-11.png) 3. Eraser tool
+  Click the pencil-like icon in the toolbar on the left. This is the linear tool. Use the left mouse button to click a point on the graph as the starting point, and then move the mouse, a red line will appear, move the mouse to the desired end position, click the left mouse button again, a line will be drawn. If you want to draw a polyline, you can click twice in a row at the turning point.
+- ![nav-11](/images/nav-11.png) 3. raser tool
+  
+  Click the eraser tool in the left toolbar, and then drag with the left mouse button to erase the previously drawn points. The erasing range of the eraser is very small, the delete operation is recommended to use the following delete tool.
+- ![nav-12](/images/nav-12.png) 4. Curve tool
+  
+  Click the left curve tool, click the left mouse button at the starting point of the curve, then click the left mouse button again in the middle of the curve, and finally click the left mouse button at the end point of the curve. Such a curve is drawn. Note that if you want the robot to walk closer to the planned route or smooth walking, it is recommended to use this tool to adjust the turning radius of the corner.
+- ![nav-13](/images/nav-13.png) 5. Removal tool
+  
+  If you want to delete the previously drawn points on a large scale, you can use this deletion tool. Click the delete tool on the left and then click the starting point of the deletion with the left mouse button. You can see that a rectangle has been following during the movement of the mouse. Click the left mouse button again to delete the selected area of ​​the rectangle.
 
-    Click the Eraser tool on the left toolbar, then click the left mouse button and drag to erase the points drawn previously.
-  - ![nav-12](/images/nav-12.png) 4. Curve tool
-
-    Click the curve tool on the left toolbar, click the left mouse button at the beginning of the curve, and then click it in the middle of the curvea and the endpoint of the curve respectively. Such a curve is drawn.
-  - ![nav-13](/images/nav-13.png) 5. Remove tool
-
-    If you want to delete the points you drawn previously in a wide range, you can use this removal tool. Click on the delete tool on the left toolbar, and then put left mouse click on the starting point of the deletion, at this moment,  you can see a rectangle always moves with the mouse. Click the left mouse button again to delete the area selected by rectangle. Right click to cancel the selection.
-
-You can draw the inspection trajectory of the robot with those tools. It should be noted that you draw the line (blue dot) along the original trajectory as much as possible to ensure that the path is smooth during the movement. You can see the terrain roughly from the green point on the map, and then draw the points allowed by the range of motion based on this information. For service robot, mode trajectory is connected.
+Using these tools, you can draw the robot's navigation route. Pay attention to try to follow the original trajectory (blue dot) to draw the line, so as to ensure that the robot can move smoothly in the planned route. There are dense black spots around the map that are the boundaries of the area or the outline of obstacles. These points can roughly reflect the surrounding state. For the robot mode, the trajectory is connected.
 
 ![nav-14](/images/nav-14.png)
 
-### <a href="#" id="draw-station"></a>3.3.b Set target point
+### 3.3.b Set target point
 
-With respect to the application scenarios of service robot, the robot needs to move back and forth between several fixed positions. For example, from the kitchen to the first table, then back to the kitchen to the second table and so on. The following work is to mark the location of each target point on the route map drawn above. We can send the corresponding target point to the robot, and then let the robot go to the target point automatically.
+For robot application scenarios, the robot needs to move back and forth between several fixed positions. For example, walk from the kitchen to table one, and then return to the kitchen to table two and so on. The following work is to mark the location of each target point on the route drawn above. After that, we can send the corresponding target point to the robot, and then let the robot automatically go to the target point.
 
-Click on ![nav-15](/images/nav-15.png) to activate the inspection site insertion tool, and click on the inspection trajectory in order to insert inspection sites. Inspection  sites can be deleted by erasing and deleting tools.
+Click![nav-15](/images/nav-15.png) to activate the navigation target point insertion tool, and click on the navigation route in turn to insert the navigation target point. You can also use the eraser and delete tools to delete the navigation target point.
 
 ![nav-16](/images/nav-16.png)
 
-Enter the corresponding target point number in the currently selected navigation point below, and the corresponding target point will be displayed in green in the figure. We can know the serial number of each target point in this way.
+The selected target point is green, and its map information will be displayed in the site properties window on the right. `ATTENTION: Point 0 access to the kitchen in food-delivered method.`
+
+Site attribute description:
+(1) To switch sites, you need to use the site switch button on the upper side of the site properties window to switch.
+(2) To accurately adjust the position of the station, the position of the station can be changed by modifying the "X axis" and "Y axis" under the site properties.
+(3) Modify the direction of the arrow of the station by modifying the "angle". The direction of the arrow is the direction of the robot after driving to the destination (the robot must turn to this direction to confirm its arrival at the destination).
+(4) The "radius difference" and "angle difference" are the allowable position error and the allowable angle error when the robot reaches the target point.
+(5) The circulation direction is to adjust the circulation direction, and the default is bidirectional.
 
 ![nav-100](/images/nav-100.png)
 
 ![nav-20](/images/nav-20.png)
 
-### <a href="#" id="save-path"></a>3.3.c Save the trajectory and upload
+### 3.3.c Save and upload the navigation path file
 
-Click the button "Save Path" on the interface, enter the file name, and click "Save".
+On the editing interface, click the "Save Path" button and a save dialog box will pop up to enter the file name, and click "Save".
 
 ![nav-17](/images/nav-17.png)
 
 ![nav-18](/images/nav-18.png)
 
-The full demo video about this sector:
+Full demo video：
 
-[Draw the planning path and target point](https://www.bwbot.org/s/pY3uAg)
+[Draw Navigation Path & Set Target Point](https://www.bwbot.org/s/qTMW72)
 
-## <a href="#" id="open-close"></a>3.4 Openning and closing of autonomous inspection
+## 3.4 Start & Stop navigation service
 
-Open the control terminal software and click the button "Not Connected" to connect with the chassis. Waiting for the map download to complete, the client loads a few sections drawn navigation map and path site automatically.
+After connecting to the robot and loading map successfull, the client can load path and point we drew and set automatically.
 
 ![nav-19](/images/nav-19.png)
 
@@ -117,9 +128,9 @@ Open the control terminal software and click the button "Not Connected" to conne
 
 ![nav-22](/images/nav-22.png)
 
-`Control the robot remotelyled to the position where it can be tracked. Of course, the robot must be in the inspection path and its facing orientation should be the same as the map you have created.`
+`Control the robot move to the position that can be tracked, the robot must be on the navigation route, and the orientation of the robot must be consistent with the orientation of the drawing.`
 
-Click the button "Start navigation" to start the automatic inspection, wait 30 seconds or so for the robot to start to move autonomously, and the blue blocks that indicate the location of the robot in the interface begin to be updated synchronously.
+Select "navigation" and click the "Start Service" button to start the navigation service. After loading the program, the robot starts to move autonomously. At the same time, the blue block indicating the robot's position in the interface starts to update synchronously.
 
 ![nav-23](/images/nav-23.png)
 
@@ -127,38 +138,39 @@ Click the button "Start navigation" to start the automatic inspection, wait 30 s
 
 ![nav-23-2](/images/nav-23-2.png)
 
-If you want to stop the inspection, click on the button "Stop Service".
+If you want to stop the navigation service, click the "stop service" button directly;
+If the robot suddenly stops moving during navigation, the visual state becomes "lost", which means that the visual system loses its target. There are two reasons:
+Reason 1: The initial movement direction of the robot is opposite to the movement direction when the map is established;
+Reason 2: Great changes in light intensity or environment.
+Solution 1 method: turn the robot around and start over; solution 2 needs to re-establish the map and plan the route.
+In case of emergency and uncontrollable, manually press the red emergency stop button on the back of the robot or touch the black anti-collision edge of the robot to stop its operation.
 
-If the robot suddenly stops moving during the autonomous inspection process, and the visual status becomes “lost”, which means that the vision system loses the targets. The reasons for that may be the following: (1) The initial movement direction of the robot is opposite to the movement direction when the map is established; (2) the light intensity or the environment has changed tremendously. For reason (1), please restart the robot after turn it around. For reason (2), you need to re-esablish the map and planning path.
+Full demo video：
 
-The full demo video of this section:
+[Start & Stop navigation service](https://www.bwbot.org/s/QWFLNR)
 
-[Openning and closing of autonomous inspection](https://www.bwbot.org/s/fBYkCv)
+`ATTENTION: Please press the red emergency stop switch on the robot under emergency.`
 
-`In case of emergency, please press the red switch manually on the trolley to stop it.`
+## 3.5 Navigation map management & update
 
-
-## <a href="#" id="open-close"></a>3.5 Map Management and Updates
-
-In the map management control panel，we provide map management functions which include map deletion, update and save as.
+The map management control panel provides map management functions, including "map deletion", "update", and "save as" .
 
 ![nav-24](/images/nav-24.png)
 
-### 3.5.1 Update map
+### 3.5.1 Update
 
-In actual use, the environment may change a lot, which results in the map established previously can no longer be tracked. In this moment, you can use the function of updating map. First select the map to be updated in the left menu , then click the button “Update Map”.
+In actual use, the environment may change a lot, which makes the previously built map unable to continue tracking and use. At this time, the map needs to be updated. First, select the map to be updated in the left menu and click the update map button.
 
 ![nav-25](/images/nav-25.png)
 
 ![nav-26](/images/nav-26.png)
 
-The robot may not be able to trace after turning on the updating function. At this time, you can remotely control the robot to a place where environment changes a little , then the robot can track the environment. The subsequent operation is the same as the process of establishing a map. When the map updating is completed, please click the button“Save As “firstly. Then you need to enter the name of the new map and wait for the save to complete. If you feel that the new map is of good quality, you can click the button “End Update” to end the map update process. The newly updated map can be seen in the map drop-down menu. After that, you can use the new map to navigate.
+After entering the update map interface, if the robot cannot recognize the surrounding features. At this time, the robot needs to be transferred to the scene that has not been changed, so that the robot recognizes the surrounding features through the internal picture. The subsequent operations are the same as the process of drawing. When saving, enter the name of the map and wait for the save to complete (if the name is the same, the previous map will be overwritten). If you feel that the quality of the new map is good, you can click End Update to stop the map update process. You can see the newly updated map in the map drop-down menu. You can then use the new map to navigate.
 
 ![nav-27](/images/nav-27.png)
 
+### 3.5.2 Deletion
 
-### 3.5.2 Delete map
+Find the first drop-down menu and select the name of the map you want to delete. Click the delete button on the right to delete the map.
 
-Select the name of map in the first drop-down menu. Click the button “delete “  on the right to delete the map.
-
-[Robot map management](https://www.bwbot.org/s/TPuSCo)
+[Navigation map management & update](https://www.bwbot.org/s/TPuSCo)
