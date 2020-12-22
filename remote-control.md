@@ -4,9 +4,9 @@ Galileo navigation system with Internet of things system, users can remote contr
 
 ## 8.1 Install
 
-[Download](http://bwbot.org/s/tEcBiU)remote robot package and install. After installation, the interface is shown in the figure below.
+[Download](http://bwbot.org/s/tEcBiU) remote control package and install. After installation, the interface is shown in the figure below.
 
-![iot client](./images/iot1.png)
+![iot client](./images/iot-en1.png)
 
 ## 8.2 Configuration
 
@@ -18,7 +18,7 @@ After configuration, pay attention to modify the remote connection password of t
 
 After the robot side ensures normal operation, click the unconnected button of the client. Enter the ID and remote connection password of the robot in the pop-up window.
 
-![iot client 2](./images/iot2.png)
+![iot client 2](./images/iot-en2.png)
 
 After the input is completed, click the Add Connection button. Under normal circumstances, the client can remotely control the robot.
 

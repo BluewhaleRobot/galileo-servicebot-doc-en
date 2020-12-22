@@ -6,7 +6,7 @@ The calibration of robot consists of two parts. One is IMU calibration, the othe
 
 Demo video
 
-<video src="https://bwbot.org/s/sHt8wN" controls style="max-width: 100%"></video>
+<video src="https://bwbot.org/s/QakzBD" controls style="max-width: 100%"></video>
 
 ## 5.1 IMU calibration
 
@@ -44,7 +44,7 @@ At this time, the robot will enter the building-map status.
 
 According to the window prompt, move your robot forms a closed-loop.
 
-![closed-loo](./images/calib6.png)
+![closed-loop](./images/calib6.png)
 
 Wait for the closed-loop to complete, and then continue to move forward for a distance. At this time, the robot will automatically calculate the calibration parameters and errors.
 

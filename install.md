@@ -8,4 +8,4 @@
 
 ![install-2](/images/install-2.png)
 
-3. The software is developed based on .NET technology and requires .NET Framework 4.6.1 . Windows10 comes with this operating environment. For other Windows operating systems, please install .NET Framework 4.6.1 by yourself.
+3. The software is developed based on .NET technology and requires .NET Framework 4.6.1 . Windows 10 comes with this operating environment. For other Windows operating systems, please install .NET Framework 4.6.1 by yourself.

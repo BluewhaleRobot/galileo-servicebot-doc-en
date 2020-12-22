@@ -4,13 +4,13 @@ According to different application environment, the performance of robots will b
 
 After connecting the robot, click the setting button in the navigation bar above to open the robot setting interface.
 
-![setting button](images/parms-btn.png)
+![setting button](images/params-btn.png)
 
 If there is no button in the navigation bar, the robot does not support setting parameters. You can try again after updating the robot.
 
 The setting interface is as follows
 
-![setting-ui](images/params.png)
+![setting-ui](images/params-ui.png)
 
 Modify the parameters that need to be changed, and then click OK to update the robot parameters.
 
@@ -51,10 +51,6 @@ Robot Motion Params
 - - Look ahead distance
 
     Unit: meter. The higher the value of the motion control parameter forward direction aiming distance is, the worse the fitting effect of the path is (when the mode is not bypassed, the traffic efficiency will be affected), but the speed will be smoother and the swing range will be smaller.
-
-Barrier Avoidance Settings
-
-![barrier avoidance picture](/images/obstacles.jpg)
 
 - Get around
 

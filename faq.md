@@ -4,7 +4,7 @@
 
 Right-click to close the image transmission, and then reopen the image transmission, if the problem still exists, please wait for the robot to drive away from this signal blocking area before trying again.
 
-## 4.2 The visual status shows "missing" during the construction process, and no cyan feature points appear in the black and white image transmission screen
+## 4.2 The visual status shows "missing" during the construction process, and no green feature points appear in the black and white image transmission screen
 
 There are two cases as follows:
    

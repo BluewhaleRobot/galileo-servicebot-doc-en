@@ -4,7 +4,7 @@
 
 * [1. Install Software](install.md)
 
-* [2. Ues Remote Control with Image](remote.md)
+* [2. Use Remote Control](remote.md)
 
 * [3. Vision Navigation](nav.md)
 
@@ -16,6 +16,6 @@
 
 * [7. I/O Control](io.md)
   
-* [8. Remote Control with 4G and Image](remote-control.md)
+* [8. Remote Control with 4G](remote-control.md)
 
 * [9. FAQ](faq.md)
